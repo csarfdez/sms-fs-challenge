@@ -1,0 +1,22 @@
+<form [formGroup]="form">
+  <mat-form-field appearance="fill" class="field">
+    <mat-label>Start Date</mat-label>
+    <input matInput [matDatepicker]="startPicker" [formControl]="form.get('startDate')" (dateChange)="onDateChange()">
+    <mat-datepicker-toggle matSuffix>
+      <mat-icon matDatepickerToggleIcon (click)="clearDate('startDate')">clear</mat-icon>
+    </mat-datepicker-toggle>
+    <mat-datepicker-toggle matSuffix [for]="startPicker"></mat-datepicker-toggle>
+    <mat-datepicker #startPicker></mat-datepicker>
+    <mat-error>The start date must be less than or equal to the end date</mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="field">
+    <mat-label>End Date</mat-label>
+    <input matInput [matDatepicker]="endPicker" [formControl]="form.get('endDate')" (dateChange)="onDateChange()">
+    <mat-datepicker-toggle matSuffix>
+      <mat-icon matDatepickerToggleIcon (click)="clearDate('endDate')">clear</mat-icon>
+    </mat-datepicker-toggle>
+    <mat-datepicker-toggle matSuffix [for]="endPicker"></mat-datepicker-toggle>
+    <mat-datepicker #endPicker></mat-datepicker>
+    <mat-error>The end date must be greater than or equal to the start date</mat-error>
+  </mat-form-field>
+</form>

@@ -1,0 +1,9 @@
+.full-width-table {
+  width: 100%;
+  th {
+    width: calc(100% / 6);
+  }
+  td {
+    width: calc(100% / 6);
+  }
+}
